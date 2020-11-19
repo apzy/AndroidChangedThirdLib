@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'img-optimizer'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion build_versions.target_sdk
+
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    compileOnly  deps.androidx.appcompat
+    compileOnly  deps.androidx.design
+    compileOnly deps.gson
+
+//    testImplementation Config.depConfig.test_junit.dep
+//    testImplementation Config.depConfig.test_robolectric.dep
+//    testImplementation Config.depConfig.gson.dep
+//    testImplementation Config.depConfig.support_appcompat_v7.dep
+//    testImplementation Config.depConfig.support_design.dep
+//    testImplementation Config.depConfig.eventbus_lib.dep
+}
+
